@@ -1,20 +1,20 @@
-//Wrap code in an IIFE
-(function(){
+
+(() =>{
   
   let screen = document.querySelector('.screen');
   let buttons = document.querySelectorAll('.btn');
   let clear = document.querySelector('.btn-clear');
   let equal = document.querySelector('.btn-equal');
   
-  //retrieve data from numbers that are clicked
-  buttons.forEach(function(button){
-    button.addEventListener('click', function(e){
+  
+  buttons.forEach((button) =>{
+    button.addEventListener('click',  (e)=>{
       let value = e.target.dataset.num;
       screen.value += value;
     })
   });
   
-  equal.addEventListener('click', function(e){
+  equal.addEventListener('click', (e)=>{
     if(screen.value === ''){
       screen.value = 'Please Enter a Value';
     } else {
@@ -23,8 +23,8 @@
     }
   })
   
-  clear.addEventListener('click', function(e){
+  clear.addEventListener('click', (e)=>{
     screen.value = '';
   })
  
-})(); //end IIFE
+})(); 
